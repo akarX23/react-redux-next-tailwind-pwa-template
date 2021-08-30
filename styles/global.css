@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.padding-alignment {
+  @apply sm:px-24 px-2;
+}
+
+.margin-alignment {
+  @apply sm:mx-24 mx-2;
+}
+
+@layer base {
+  h1 {
+    @apply text-4xl my-3;
+  }
+  h2 {
+    @apply text-xl my-2;
+  }
+}
+
+.hide-scroll-x::-webkit-scrollbar {
+  width: 0px;
+}
+
+body {
+  @apply bg-paper;
+}
+
+.add-transition {
+  @apply transition-all ease-in-out duration-200;
+}
