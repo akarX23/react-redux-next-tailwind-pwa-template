@@ -17,7 +17,7 @@
   width: 0px;
 }
 
-// Default body background from our theme
+/* Default body background from our theme */
 body {
   @apply bg-paper;
 }
