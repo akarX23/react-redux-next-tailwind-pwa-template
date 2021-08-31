@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 // THIS OBJECT SHOULD BE SIMILAR TO ./helpers/theme.js
 const themeConstants = {
   paper: "#F9F9F9",
@@ -25,7 +27,13 @@ const themeConstants = {
 };
 
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+ mode: "jit",
+ purge: [
+    "./pages/*.{js,ts,jsx,tsx}",
+    "./Components/**/*.{js,ts,jsx,tsx}",
+    "./hoc/*.{js,ts,jsx,tsx}",
+    "./Widgets/**/*.{js,ts,jsx,tsx}",
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -37,8 +45,14 @@ module.exports = {
         fg: themeConstants.fg.main,
         "fg-dark": themeConstants.fg.dark,
       },
+    }, 
+    
+    // We over ride the whole screens with breakpoints for width. The 'ha' breakpoint will help us in blocking hover animations on devices not supporting hover.
+    screens: {
+      ...defaultTheme.screens,
+      ...themeConstants.breakpoints,
+      ha: { raw: "(hover: hover)" },
     },
-    screens: themeConstants.breakpoints,
   },
   variants: {
     extend: {},
