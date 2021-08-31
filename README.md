@@ -1,5 +1,6 @@
  # Boilerplate for Next JS with Redux, Material UI, Tailwind CSS, and PWA.
- ###Follow my blog to set up this repository.
+ 
+ ### Follow my blog to set up this repository.
  
 ## Pre-requisites
 1) If you don't plan to use docker to run this app, you need __Node (version 10 or higher) and NPM__.
@@ -34,13 +35,13 @@ This will run the development server on port 3000. You can access the app on [ht
 ## The pre-defined Custom Theme
 
 The theme for this project is defined in two files:
-*`/tailwind.config.js`
-*`/helpers/theme.js`
+* `/tailwind.config.js`
+* `/helpers/theme.js`
 
 The first theme is for __*Tailwind*__. The second theme is for __*Material UI*__.
 __It's advised to keep the theme consistent throughout the app. Make sure in both the places the values are same.__
 
-### Disabling PWA and service worker. 
+### Disabling PWA and service worker:
 By default the service worker is enabled. If you don't want your app to be a PWA go to `/next.config.js` and set `register : false`. Restart your app to see the changes.
 
 ## Salient features of this app:
@@ -48,6 +49,6 @@ By default the service worker is enabled. If you don't want your app to be a PWA
 2) Redux is configured with Next JS and a sample action and reducer is already made.
 3) If you have kept PWA enabled, the app will work offline and can be installed on any device.
 
-##Thank you for cloning this project. If you want to make any changes please make a separate branch and make a PR. If you face any issues, you can raise them in the issues sections.
+## Thank you for cloning this project. If you want to make any changes please make a separate branch and make a PR. If you face any issues, you can raise them in the issues sections.
 
 Ritik Agrawal.
