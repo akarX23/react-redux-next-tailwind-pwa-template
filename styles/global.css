@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* For whitespace on the sides varying with width */
 .padding-alignment {
   @apply sm:px-24 px-2;
 }
@@ -10,23 +12,17 @@
   @apply sm:mx-24 mx-2;
 }
 
-@layer base {
-  h1 {
-    @apply text-4xl my-3;
-  }
-  h2 {
-    @apply text-xl my-2;
-  }
-}
-
+/* Add this class to hide horizontal scrolls */
 .hide-scroll-x::-webkit-scrollbar {
   width: 0px;
 }
 
+// Default body background from our theme
 body {
   @apply bg-paper;
 }
 
-.add-transition {
-  @apply transition-all ease-in-out duration-200;
+/* Prevents blue highlight color of elements when tapped on phones */
+* {
+  -webkit-tap-highlight-color: transparent;
 }
