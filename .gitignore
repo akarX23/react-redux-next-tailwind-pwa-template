@@ -33,5 +33,5 @@ yarn-error.log*
 # vercel
 .vercel
 
-# SW MAPS
-public/*js.map
+# public pwa files
+/public/*.js.map

@@ -1,9 +1,12 @@
-import React, { Component } from "react";
-import Layout from "./Layout";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 //Our MUI Theme object - inject theme to the whole project
 import { ThemeProvider } from "@material-ui/core";
 import { theme } from "../helpers/theme";
+
+import Layout from "./Layout";
+import { auth } from "../actions/user_actions";
 
 /**
   This function consumes a component and wraps it under layout. 
@@ -13,18 +16,24 @@ import { theme } from "../helpers/theme";
   You can also implement your own function. Goal is to have all your components wrapped with the Layout HOC and Theme Provider
  */
 
-const Wrapper = (ComposedClass) => {
-  class HOCcheck extends Component {
-    render() {
-      return (
-        <ThemeProvider theme={theme}>
-          <Layout>
-            <ComposedClass {...this.props} />
-          </Layout>
-        </ThemeProvider>
-      );
-    }
-  }
+const Wrapper = (Component) => {
+  const HOCcheck = (props) => {
+    const state = useSelector((state) => state.defaultReducer);
+    const dispatch = useDispatch();
+    console.log(state);
+
+    useEffect(() => {
+      dispatch(auth());
+    }, []);
+
+    return (
+      <ThemeProvider theme={theme}>
+        <Layout>
+          <Component {...props} />
+        </Layout>
+      </ThemeProvider>
+    );
+  };
 
   return HOCcheck;
 };
